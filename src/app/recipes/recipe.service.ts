@@ -14,7 +14,7 @@ export class RecipeService {
         new Recipe('Taco', 'Orale','https://images-gmi-pmc.edge-generalmills.com/e59f255c-7498-4b84-9c9d-e578bf5d88fc.jpg',[
             new Ingredient('Tortilla',1),
             new Ingredient('Carnitas',5),
-            new Ingredient('Crema',3),
+            new Ingredient('Crema',3)
 
         ])
       ]
