@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http"
 import { RecipeService } from "../recipes/recipe.service"
 
 import { environment } from "src/environments/environment"
+import { Recipe } from "../recipes/recipe.model"
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
@@ -13,6 +14,13 @@ export class DataStorageService {
         this.http.put(environment.firebaseAPIUrl + '/recipes.json',recipes)
         .subscribe(response => {
             console.log(response)
+        })
+    }
+
+    fetchRecipes() {
+        this.http.get<Recipe[]>(environment.firebaseAPIUrl + '/recipes.json')
+        .subscribe(recipes => {
+            this.recipeService.setRecipes(recipes)
         })
     }
 }
